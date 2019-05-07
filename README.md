@@ -4,3 +4,5 @@
     Guilherme de Morais Richter - 18/0101617
     Ian Fillipe Pontes Ferreira - 18/0102087
     Italo Vinicius Pereira Guimarães - 18/0102656
+## Descrição
+    Projeto de Desenvolvimento de Software com foco em desenvolvimento web
