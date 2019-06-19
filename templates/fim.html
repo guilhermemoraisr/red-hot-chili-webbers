@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+
+{% if renda < 5000.00 %}  <!--'renda' colocar o nome que foi passado no arquivo app.py-->
+<h1>Não privilegiado</h1>
+{% else %}
+<h1>Privilegiado</h1>
+{% endif %}
+
+{% endblock %}
