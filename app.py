@@ -10,7 +10,7 @@ def home_page():
 
 @app.route('/presentation_data')
 def present():
-    return render_template('fim.html', renda=float(session['income']))
+    return render_template('fim.html', renda=float(session['income']), genero=int(session['gender']), race=int(session['ethnicity']), estado=int(session['state']))
 #-------------------------------------fazer este comando caso queira fazer um 'if/else' no arquivo fim.html
 
 @app.route('/form', methods=['POST'])
@@ -22,7 +22,7 @@ def create_information():
     session['state'] = request.form['state']
     session['graduation'] = request.form['graduation']
     return redirect(url_for('present'))
-
+    
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
