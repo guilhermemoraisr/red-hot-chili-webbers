@@ -1,11 +1,147 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
 {% block content %}
+<br><br>
+<div class="container" style="width:25%">
 
-{% if renda < 5000.00 %}  <!--'renda' colocar o nome que foi passado no arquivo app.py-->
-<h1>Não privilegiado</h1>
-{% else %}
-<h1>Privilegiado</h1>
-{% endif %}
+    {% if renda <= 8000.00 and genero == 1 and race == 1 %}
+    <!--'renda' colocar o nome que foi passado no arquivo app.py-->
+    <ul class="collection with-header">
+        <li class="collection-item avatar">
+            <img src="{{ url_for('static', filename='icons/avatarMale1.jpg') }}" alt="Avatar" class="circle">
+            <span class="title">Não Privilegiado</span>
+            <p>Renda = {{renda}} <br>
+                Renda familiar <br>
+                Estado
+            </p>
+        </li>
+    </ul>
+
+    {% elif renda <= 8000.00 and genero == 1 and race == 2 %}
+    <ul class="collection with-header">
+        <li class="collection-header">
+            <h4>Não Privilegiado</h4>
+        </li>
+        <li class="collection-item avatar">
+            <img src="{{ url_for('static', filename='icons/avatarMale2.jpg') }}" alt="Avatar" class="circle">
+            <span class="title">Renda</span>
+            <p>Renda familiar</p>
+            <p>Estado</p>
+        </li>
+    </ul>
+
+    {% elif renda <= 8000.00 and genero == 2 and race == 1 %}
+    <ul class="collection with-header">
+        <li class="collection-header">
+            <h4>Não Privilegiado</h4>
+        </li>
+        <li class="collection-item avatar">
+            <img src="{{ url_for('static', filename='icons/avatarFemale1.jpg') }}" alt="Avatar" class="circle">
+            <span class="title">Renda</span>
+            <p>Renda familiar</p>
+            <p>Estado</p>
+        </li>
+    </ul>
+
+    {% elif renda <= 8000.00 and genero == 2 and race == 2 %}
+    <ul class="collection with-header">
+        <li class="collection-header">
+            <h4>Não Privilegiado</h4>
+        </li>
+        <li class="collection-item avatar">
+            <img src="{{ url_for('static', filename='icons/avatarFemale2.jpg') }}" alt="Avatar" class="circle">
+            <span class="title">Renda</span>
+            <p>Renda familiar</p>
+            <p>Estado</p>
+        </li>
+    </ul>
+    {% endif %}
+    <!--FIM 1° 'if'-->
+
+    {% if renda > 8000.00 and genero == 1 and race == 1 %}
+    <ul class="collection with-header">
+        <li class="collection-header">
+            <h4>Privilegiado</h4>
+        </li>
+        <li class="collection-item avatar">
+            <img src="{{ url_for('static', filename='icons/avatarMale1.jpg') }}" alt="Avatar" class="circle">
+            <span class="title">Renda</span>
+            <p>Renda familiar</p>
+            <p>Estado</p>
+        </li>
+    </ul>
+
+    {% elif renda > 8000.00 and genero == 1 and race == 2 %}
+    <ul class="collection with-header">
+        <li class="collection-header">
+            <h4>Privilegiado</h4>
+        </li>
+        <li class="collection-item avatar">
+            <img src="{{ url_for('static', filename='icons/avatarMale2.jpg') }}" alt="Avatar" class="circle">
+            <span class="title">Renda</span>
+            <p>Renda familiar</p>
+            <p>Estado</p>
+        </li>
+    </ul>
+
+    {% elif renda > 8000.00 and genero == 2 and race == 1 %}
+    <ul class="collection with-header">
+        <li class="collection-header">
+            <h4>Privilegiado</h4>
+        </li>
+        <li class="collection-item avatar">
+            <img src="{{ url_for('static', filename='icons/avatarFemale1.jpg') }}" alt="Avatar" class="circle">
+            <span class="title">Renda</span>
+            <p>Renda familiar</p>
+            <p>Estado</p>
+        </li>
+    </ul>
+
+    {% elif renda > 8000.00 and genero == 2 and race == 2 %}
+    <ul class="collection with-header">
+        <li class="collection-header">
+            <h4>Privilegiado</h4>
+        </li>
+        <li class="collection-item avatar">
+            <img src="{{ url_for('static', filename='icons/avatarFemale2.jpg') }}" alt="Avatar" class="circle">
+            <span class="title">Renda</span>
+            <p>Renda familiar</p>
+            <p>Estado</p>
+        </li>
+    </ul>
+    {% endif %}
+    <!--FIM 2° 'if'-->
+
+    {% if estado == 1 %}
+    <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="{{ url_for('static', filename='images/SP.jpg') }}">
+        </div>
+        <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i
+                    class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p><ul class="collection with-header">
+                    <li class="collection-item avatar">
+                        <img src="{{ url_for('static', filename='icons/avatarMale1.jpg') }}" alt="Avatar" class="circle">
+                        <span class="title">Não Privilegiado</span>
+                        <p>Renda = {{renda}} <br>
+                            Renda familiar <br>
+                            Estado
+                        </p>
+                    </li>
+                </ul></p>
+        </div>
+    </div>
+
+    {% elif estado == 2 %}
+    <h1>DF</h1>
+
+    {% endif %}
+    <!--FIM 3° 'if'-->
+</div>
 
 {% endblock %}
