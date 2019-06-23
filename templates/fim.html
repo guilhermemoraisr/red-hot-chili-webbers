@@ -112,7 +112,7 @@
     {% endif %}
     <!--FIM 2° 'if'-->
 
-    {% if estado == 1 %}
+    {% if estado == 25 %}
     <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
             <img class="activator" src="{{ url_for('static', filename='images/SP.jpg') }}">
@@ -124,20 +124,23 @@
         </div>
         <div class="card-reveal">
             <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-            <p><ul class="collection with-header">
+            <p>
+                <ul class="collection with-header">
                     <li class="collection-item avatar">
-                        <img src="{{ url_for('static', filename='icons/avatarMale1.jpg') }}" alt="Avatar" class="circle">
+                        <img src="{{ url_for('static', filename='icons/avatarMale1.jpg') }}" alt="Avatar"
+                            class="circle">
                         <span class="title">Não Privilegiado</span>
                         <p>Renda = {{renda}} <br>
                             Renda familiar <br>
                             Estado
                         </p>
                     </li>
-                </ul></p>
+                </ul>
+            </p>
         </div>
     </div>
 
-    {% elif estado == 2 %}
+    {% elif estado == 1 %}
     <h1>DF</h1>
 
     {% endif %}
