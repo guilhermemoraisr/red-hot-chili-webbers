@@ -2,157 +2,386 @@
 {% extends "base.html" %}
 {% block content %}
 <br><br>
-<div class="container" style="width:25%">
+<div class="container" style="width:30%">
 
-    {% if renda <= 8000.00 and genero == 1 and race == 1 %}
-    <!--'renda' colocar o nome que foi passado no arquivo app.py-->
+    <!--Homem Branco-->
+    {% if genero == 1 and race == 1 %}
     <ul class="collection with-header">
         <li class="collection-item avatar">
             <img src="{{ url_for('static', filename='icons/avatarMale1.jpg') }}" alt="Avatar" class="circle">
-            <span class="title">Não Privilegiado</span>
-            <p>Renda = {{renda}} <br>
-                Renda familiar <br>
-                Estado
+
+            {% if renda >= 13560.00 %}
+            <span class="title">Alta classe alta</span>
+            {% elif renda >= 6780.00 %}
+            <span class="title">Baixa classe alta</span>
+            {% elif renda >= 3390.00 %}
+            <span class="title">Alta classe média</span>
+            {% elif renda >= 2034.00 %}
+            <span class="title">Média classe média</span>
+            {% elif renda >= 1356.00 %}
+            <span class="title">Baixa classe média</span>
+            {% elif renda >= 0.00  %}
+            <span class="title">Classe baixa</span>
+            {% endif %}
+
+            <p>Renda: R$ {{renda}} <br>
+                Renda familiar: R$ {{renda/familia}} <br>
             </p>
+
+            {% if escolaridade == 1 %}
+            <p>Grau de escolaridade: Sem estudo</p>
+            {% elif escolaridade == 2 %}
+            <p>Grau de escolaridade: Ensino fundamental incompleto</p>
+            {% elif escolaridade == 3 %}
+            <p>Grau de escolaridade: Ensino fundamental completo</p>
+            {% elif escolaridade == 4 %}
+            <p>Grau de escolaridade: Ensino médio incompleto</p>
+            {% elif escolaridade == 5 %}
+            <p>Grau de escolaridade: Ensino médio completo</p>
+            {% elif escolaridade == 6 %}
+            <p>Grau de escolaridade: Ensino superior incompleto</p>
+            {% elif escolaridade == 7 %}
+            <p>Grau de escolaridade: Ensino superior completo</p>
+            {% endif %}
+
         </li>
     </ul>
 
-    {% elif renda <= 8000.00 and genero == 1 and race == 2 %}
+    <!--Homem Negro-->
+    {% elif genero == 1 and race == 2 %}
     <ul class="collection with-header">
-        <li class="collection-header">
-            <h4>Não Privilegiado</h4>
-        </li>
         <li class="collection-item avatar">
             <img src="{{ url_for('static', filename='icons/avatarMale2.jpg') }}" alt="Avatar" class="circle">
-            <span class="title">Renda</span>
-            <p>Renda familiar</p>
-            <p>Estado</p>
+
+            {% if renda >= 13560.00 %}
+            <span class="title">Alta classe alta</span>
+            {% elif renda >= 6780.00 %}
+            <span class="title">Baixa classe alta</span>
+            {% elif renda >= 3390.00 %}
+            <span class="title">Alta classe média</span>
+            {% elif renda >= 2034.00 %}
+            <span class="title">Média classe média</span>
+            {% elif renda >= 1356.00 %}
+            <span class="title">Baixa classe média</span>
+            {% elif renda >= 0.00  %}
+            <span class="title">Classe baixa</span>
+            {% endif %}
+
+            <p>Renda: R$ {{renda}} <br>
+                Renda familiar: R$ {{renda/familia}} <br>
+            </p>
+
+            {% if escolaridade == 1 %}
+            <p>Grau de escolaridade: Sem estudo</p>
+            {% elif escolaridade == 2 %}
+            <p>Grau de escolaridade: Ensino fundamental incompleto</p>
+            {% elif escolaridade == 3 %}
+            <p>Grau de escolaridade: Ensino fundamental completo</p>
+            {% elif escolaridade == 4 %}
+            <p>Grau de escolaridade: Ensino médio incompleto</p>
+            {% elif escolaridade == 5 %}
+            <p>Grau de escolaridade: Ensino médio completo</p>
+            {% elif escolaridade == 6 %}
+            <p>Grau de escolaridade: Ensino superior incompleto</p>
+            {% elif escolaridade == 7 %}
+            <p>Grau de escolaridade: Ensino superior completo</p>
+            {% endif %}
+
         </li>
     </ul>
 
-    {% elif renda <= 8000.00 and genero == 2 and race == 1 %}
+    <!--Mulher Branca-->
+    {% elif genero == 2 and race == 1 %}
     <ul class="collection with-header">
-        <li class="collection-header">
-            <h4>Não Privilegiado</h4>
-        </li>
         <li class="collection-item avatar">
             <img src="{{ url_for('static', filename='icons/avatarFemale1.jpg') }}" alt="Avatar" class="circle">
-            <span class="title">Renda</span>
-            <p>Renda familiar</p>
-            <p>Estado</p>
+
+            {% if renda >= 13560.00 %}
+            <span class="title">Alta classe alta</span>
+            {% elif renda >= 6780.00 %}
+            <span class="title">Baixa classe alta</span>
+            {% elif renda >= 3390.00 %}
+            <span class="title">Alta classe média</span>
+            {% elif renda >= 2034.00 %}
+            <span class="title">Média classe média</span>
+            {% elif renda >= 1356.00 %}
+            <span class="title">Baixa classe média</span>
+            {% elif renda >= 0.00  %}
+            <span class="title">Classe baixa</span>
+            {% endif %}
+
+            <p>Renda: R$ {{renda}} <br>
+                Renda familiar: R$ {{renda/familia}} <br>
+            </p>
+
+            {% if escolaridade == 1 %}
+            <p>Grau de escolaridade: Sem estudo</p>
+            {% elif escolaridade == 2 %}
+            <p>Grau de escolaridade: Ensino fundamental incompleto</p>
+            {% elif escolaridade == 3 %}
+            <p>Grau de escolaridade: Ensino fundamental completo</p>
+            {% elif escolaridade == 4 %}
+            <p>Grau de escolaridade: Ensino médio incompleto</p>
+            {% elif escolaridade == 5 %}
+            <p>Grau de escolaridade: Ensino médio completo</p>
+            {% elif escolaridade == 6 %}
+            <p>Grau de escolaridade: Ensino superior incompleto</p>
+            {% elif escolaridade == 7 %}
+            <p>Grau de escolaridade: Ensino superior completo</p>
+            {% endif %}
+
         </li>
     </ul>
 
-    {% elif renda <= 8000.00 and genero == 2 and race == 2 %}
+    <!--Mulher Negra-->
+    {% elif genero == 2 and race == 2 %}
     <ul class="collection with-header">
-        <li class="collection-header">
-            <h4>Não Privilegiado</h4>
-        </li>
         <li class="collection-item avatar">
             <img src="{{ url_for('static', filename='icons/avatarFemale2.jpg') }}" alt="Avatar" class="circle">
-            <span class="title">Renda</span>
-            <p>Renda familiar</p>
-            <p>Estado</p>
+
+            {% if renda >= 13560.00 %}
+            <span class="title">Alta classe alta</span>
+            {% elif renda >= 6780.00 %}
+            <span class="title">Baixa classe alta</span>
+            {% elif renda >= 3390.00 %}
+            <span class="title">Alta classe média</span>
+            {% elif renda >= 2034.00 %}
+            <span class="title">Média classe média</span>
+            {% elif renda >= 1356.00 %}
+            <span class="title">Baixa classe média</span>
+            {% elif renda >= 0.00  %}
+            <span class="title">Classe baixa</span>
+            {% endif %}
+
+            <p>Renda: R$ {{renda}} <br>
+                Renda familiar: R$ {{renda/familia}} <br>
+            </p>
+
+            {% if escolaridade == 1 %}
+            <p>Grau de escolaridade: Sem estudo</p>
+            {% elif escolaridade == 2 %}
+            <p>Grau de escolaridade: Ensino fundamental incompleto</p>
+            {% elif escolaridade == 3 %}
+            <p>Grau de escolaridade: Ensino fundamental completo</p>
+            {% elif escolaridade == 4 %}
+            <p>Grau de escolaridade: Ensino médio incompleto</p>
+            {% elif escolaridade == 5 %}
+            <p>Grau de escolaridade: Ensino médio completo</p>
+            {% elif escolaridade == 6 %}
+            <p>Grau de escolaridade: Ensino superior incompleto</p>
+            {% elif escolaridade == 7 %}
+            <p>Grau de escolaridade: Ensino superior completo</p>
+            {% endif %}
+
         </li>
     </ul>
     {% endif %}
-    <!--FIM 1° 'if'-->
+    <!--FIM do 1° 'if'-->
 
-    {% if renda > 8000.00 and genero == 1 and race == 1 %}
-    <ul class="collection with-header">
-        <li class="collection-header">
-            <h4>Privilegiado</h4>
-        </li>
-        <li class="collection-item avatar">
-            <img src="{{ url_for('static', filename='icons/avatarMale1.jpg') }}" alt="Avatar" class="circle">
-            <span class="title">Renda</span>
-            <p>Renda familiar</p>
-            <p>Estado</p>
-        </li>
-    </ul>
-
-    {% elif renda > 8000.00 and genero == 1 and race == 2 %}
-    <ul class="collection with-header">
-        <li class="collection-header">
-            <h4>Privilegiado</h4>
-        </li>
-        <li class="collection-item avatar">
-            <img src="{{ url_for('static', filename='icons/avatarMale2.jpg') }}" alt="Avatar" class="circle">
-            <span class="title">Renda</span>
-            <p>Renda familiar</p>
-            <p>Estado</p>
-        </li>
-    </ul>
-
-    {% elif renda > 8000.00 and genero == 2 and race == 1 %}
-    <ul class="collection with-header">
-        <li class="collection-header">
-            <h4>Privilegiado</h4>
-        </li>
-        <li class="collection-item avatar">
-            <img src="{{ url_for('static', filename='icons/avatarFemale1.jpg') }}" alt="Avatar" class="circle">
-            <span class="title">Renda</span>
-            <p>Renda familiar</p>
-            <p>Estado</p>
-        </li>
-    </ul>
-
-    {% elif renda > 8000.00 and genero == 2 and race == 2 %}
-    <ul class="collection with-header">
-        <li class="collection-header">
-            <h4>Privilegiado</h4>
-        </li>
-        <li class="collection-item avatar">
-            <img src="{{ url_for('static', filename='icons/avatarFemale2.jpg') }}" alt="Avatar" class="circle">
-            <span class="title">Renda</span>
-            <p>Renda familiar</p>
-            <p>Estado</p>
-        </li>
-    </ul>
-    {% endif %}
-    <!--FIM 2° 'if'-->
-
-    {% if estado == 25 %}
     <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
+
+            {% if estado == 1 %}
+            <img class="activator" src="{{ url_for('static', filename='images/AC.jpg') }}">
+            {% elif estado == 2 %}
+            <img class="activator" src="{{ url_for('static', filename='images/AL.jpg') }}">
+            {% elif estado == 3 %}
+            <img class="activator" src="{{ url_for('static', filename='images/AP.jpg') }}">
+            {% elif estado == 4 %}
+            <img class="activator" src="{{ url_for('static', filename='images/AM.jpg') }}">
+            {% elif estado == 5 %}
+            <img class="activator" src="{{ url_for('static', filename='images/BA.jpg') }}">
+            {% elif estado == 6 %}
+            <img class="activator" src="{{ url_for('static', filename='images/CE.jpg') }}">
+            {% elif estado == 7 %}
+            <img class="activator" src="{{ url_for('static', filename='images/DF.jpg') }}">
+            {% elif estado == 8 %}
+            <img class="activator" src="{{ url_for('static', filename='images/ES.jpg') }}">
+            {% elif estado == 9 %}
+            <img class="activator" src="{{ url_for('static', filename='images/GO.jpg') }}">
+            {% elif estado == 10 %}
+            <img class="activator" src="{{ url_for('static', filename='images/MA.jpg') }}">
+            {% elif estado == 11 %}
+            <img class="activator" src="{{ url_for('static', filename='images/MT.jpg') }}">
+            {% elif estado == 12 %}
+            <img class="activator" src="{{ url_for('static', filename='images/MS.jpg') }}">
+            {% elif estado == 13 %}
+            <img class="activator" src="{{ url_for('static', filename='images/MG.jpg') }}">
+            {% elif estado == 14 %}
+            <img class="activator" src="{{ url_for('static', filename='images/PA.jpg') }}">
+            {% elif estado == 15 %}
+            <img class="activator" src="{{ url_for('static', filename='images/PB.jpg') }}">
+            {% elif estado == 16 %}
+            <img class="activator" src="{{ url_for('static', filename='images/PR.jpg') }}">
+            {% elif estado == 17 %}
+            <img class="activator" src="{{ url_for('static', filename='images/PE.jpg') }}">
+            {% elif estado == 18 %}
+            <img class="activator" src="{{ url_for('static', filename='images/PI.jpg') }}">
+            {% elif estado == 19 %}
+            <img class="activator" src="{{ url_for('static', filename='images/RJ.jpg') }}">
+            {% elif estado == 20 %}
+            <img class="activator" src="{{ url_for('static', filename='images/RN.jpg') }}">
+            {% elif estado == 21 %}
+            <img class="activator" src="{{ url_for('static', filename='images/RS.jpg') }}">
+            {% elif estado == 22 %}
+            <img class="activator" src="{{ url_for('static', filename='images/RO.jpg') }}">
+            {% elif estado == 23 %}
+            <img class="activator" src="{{ url_for('static', filename='images/RR.jpg') }}">
+            {% elif estado == 24 %}
+            <img class="activator" src="{{ url_for('static', filename='images/SC.jpg') }}">
+            {% elif estado == 25 %}
             <img class="activator" src="{{ url_for('static', filename='images/SP.jpg') }}">
+            {% elif estado == 26 %}
+            <img class="activator" src="{{ url_for('static', filename='images/SE.jpg') }}">
+            {% elif estado == 27 %}
+            <img class="activator" src="{{ url_for('static', filename='images/TO.jpg') }}">
+            {% endif %}
+
         </div>
         <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Card Title<i
+
+            {% if renda >= 13560.00 and genero == 1 and race == 1 and escolaridade == 7 %}
+            <span class="card-title activator grey-text text-darken-4">MENOS DE 1% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
                     class="material-icons right">more_vert</i></span>
-            <p><a href="#">This is a link</a></p>
+            {% elif renda >= 13560.00 %}
+            <span class="card-title activator grey-text text-darken-4">2% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
+                    class="material-icons right">more_vert</i></span>
+            {% elif renda >= 6780.00 %}
+            <span class="card-title activator grey-text text-darken-4">4% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
+                    class="material-icons right">more_vert</i></span>
+            {% elif renda >= 3390.00 %}
+            <span class="card-title activator grey-text text-darken-4">9% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
+                    class="material-icons right">more_vert</i></span>
+            {% elif renda >= 2034.00 %}
+            <span class="card-title activator grey-text text-darken-4">16% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
+                    class="material-icons right">more_vert</i></span>
+            {% elif renda >= 1356.00 %}
+            <span class="card-title activator grey-text text-darken-4">20% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
+                    class="material-icons right">more_vert</i></span>
+            {% elif renda >= 0.00  %}
+            <span class="card-title activator grey-text text-darken-4">46% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
+                    class="material-icons right">more_vert</i></span>
+            {% endif %}
+
+            <p><a href="#">Fonte: PNAD/IBGE</a></p>
+            <!--tirar isso-->
         </div>
         <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <!--continuar daqui-->
+
+            <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
             <p>
-                <ul class="collection with-header">
-                    <li class="collection-item avatar">
-                        <img src="{{ url_for('static', filename='icons/avatarMale1.jpg') }}" alt="Avatar"
-                            class="circle">
-                        <span class="title">Não Privilegiado</span>
-                        <p>Renda = {{renda}} <br>
-                            Renda familiar <br>
-                            Estado
-                        </p>
-                    </li>
-                </ul>
+                <!--Blocos-->
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card blue-grey darken-1">
+                            <div class="card-content white-text">
+                                <span class="card-title">Gênero</span>
+
+                                {% if genero == 1 %}
+                                <!--Homem-->
+                                <p>Em média sua renda é 23% a mais em relação a uma pessoa do gênero feminino.</p>
+                                {% elif genero == 2 %}
+                                <!--Mulher-->
+                                <p>Em média você ganha 23% a menos em relação a uma pessoa do gênero masculino.</p>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6">
+                        <div class="card yellow darken-4">
+                            <div class="card-content white-text">
+                                <span class="card-title">Raça</span>
+
+                                {% if race == 1 %}
+                                <!--Branco-->
+                                <p>Em média sua renda é 44% a mais em relação a uma pessoa de etnia negra.</p>
+                                {% elif race == 2 %}
+                                <!--Negro-->
+                                <p>Em média você ganha 44% a menos em relação a uma pessoa de etnia branca.</p>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card teal darken-4">
+                            <div class="card-content white-text">
+                                <span class="card-title">Escolaridade</span>
+
+                                {% if escolaridade == 1 %}
+                                <!--Sem estudo-->
+                                <p>Em média você ganha 83% a menos em relação a alguém com o ensino superior completo.
+                                </p>
+                                {% elif escolaridade == 2 %}
+                                <!--Ensino fundamental incompleto-->
+                                <p>Em média você ganha 77% a menos em relação a alguém com o ensino superior completo.
+                                </p>
+                                {% elif escolaridade == 3 %}
+                                <!--Ensino fundamental completo-->
+                                <p>Em média você ganha 70% a menos em relação a alguém com o ensino superior completo.
+                                </p>
+                                {% elif escolaridade == 4 %}
+                                <!--Ensino médio incompleto-->
+                                <p>Em média você ganha 74% a menos em relação a alguém com o ensino superior completo.
+                                </p>
+                                {% elif escolaridade == 5 %}
+                                <!--Ensino médio completo-->
+                                <p>Em média você ganha 66% a menos em relação a alguém com o ensino superior completo.
+                                </p>
+                                {% elif escolaridade == 6 %}
+                                <!--Ensino superior incompleto-->
+                                <p>Em média você ganha 60% a menos em relação a alguém com o ensino superior completo.
+                                </p>
+                                {% elif escolaridade == 7 %}
+                                <!--Ensino superior completo-->
+                                <p>Em média sua renda é 71% a mais em relação aos outros graus de escolaridade.</p>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6">
+                        <div class="card brown darken-4">
+                            <div class="card-content white-text">
+                                <span class="card-title">Estado</span>
+
+                                {% if estado == 1 or estado == 3 or estado == 4 or estado == 14 or estado == 22 or estado == 23 or estado == 27 %}
+                                <!--Acre, Amapá, Amazonas, Pará, Rondônia, Roraima, Tocantins: Região Norte-->
+                                <p>A renda média da Região Norte é R$1500.00 e está abaixo da renda média nacional.
+                                </p>
+                                {% elif estado == 2 or estado == 5 or estado == 6 or estado == 10 or estado == 15 or estado == 17 or estado == 18 or estado == 20 or estado == 26 %}
+                                <!--Alagoas, Bahia, Ceará, Maranhão, Paraíba, Pernambuco, Rio Grande do Norte, Sergipe: Região Nordeste-->
+                                <p>A renda média da Região Nordeste é R$1400.00 e está abaixo da renda média nacional.
+                                </p>
+                                {% elif estado == 7 or estado == 9 or estado == 11 or estado == 12 %}
+                                <!--Distrito Federal, Goiás, Mato Grosso, Mato Grosso do Sul: Região Centro-Oeste-->
+                                <p>A renda média da Região Centro-Oeste é R$2400.00 e está acima da renda média
+                                    nacional.
+                                </p>
+                                {% elif estado == 8 or estado == 13 or estado == 19 or estado == 25 %}
+                                <!--Espírito Santo, Minas Gerais, Rio de Janeiro, São Paulo: Região Sudeste-->
+                                <p>A renda média da Região Sudeste é R$2500.00 e está acima da renda média nacional.
+                                </p>
+                                {% elif estado == 16 or estado == 21 or estado == 24 %}
+                                <!--Paraná, Rio Grande do Sul, Santa Catarina: Região Sul-->
+                                <p>A renda média da Região Sul é R$2300.00 e está acima da renda média nacional.
+                                </p>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Blocos-->
+
             </p>
         </div>
     </div>
 
-    {% elif estado == 1 %}
-    <h1>DF</h1>
-
-    {% endif %}
-    <!--FIM 3° 'if'-->
 </div>
 
 {% endblock %}
-
-<!--
-Renda familiar per capita -> renda/familia
-
-Estado -> gênero -> raça -> escolaridade -> renda
-
-
--->
