@@ -25,7 +25,7 @@
             {% endif %}
 
             <p>Renda: R$ {{renda}} <br>
-                Renda familiar: R$ {{renda/familia}} <br>
+                Renda familiar: R$ {{ (renda/familia) | round(2) }} <br>
             </p>
 
             {% if escolaridade == 1 %}
@@ -264,11 +264,8 @@
             {% endif %}
 
             <p><a href="#">Fonte: PNAD/IBGE</a></p>
-            <!--tirar isso-->
         </div>
         <div class="card-reveal">
-            <!--continuar daqui-->
-
             <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
             <p>
                 <!--Blocos-->
