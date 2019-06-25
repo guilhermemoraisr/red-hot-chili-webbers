@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, session, redirect, url_for
 
 app = Flask(__name__)
 app.secret_key = 'pipoca'
+df = ...
 
 @app.route('/')
 def home_page():
@@ -15,14 +16,20 @@ def present():
 
 @app.route('/form', methods=['POST'])
 def create_information():
-    session['income'] = request.form['income']
-    session['ethnicity'] = request.form.get('ethnicity')
-    session['gender'] = request.form.get('gender')
-    session['family'] = request.form['family']
-    session['state'] = request.form.get('state')
-    session['graduation'] = request.form.get('graduation')
+    income = session['income'] = request.form['income']
+
+    ethnicity = session['ethnicity'] = request.form.get('ethnicity')
+    gender = session['gender'] = request.form.get('gender')
+    family = session['family'] = request.form['family']
+    state = session['state'] = request.form.get('state')
+    graduation = session['graduation'] = request.form.get('graduation')
+
+    # Filtra o dataframe
+    #if gender != 0:
+    #        df = df[df.gender == gender]
+
     return redirect(url_for('present'))
-    
+
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
