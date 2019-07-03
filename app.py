@@ -14,7 +14,8 @@ def present():
     percEdu = Escolaridade(int(session['graduation']))
     percGen = Genero()
     percEtn = Etnia()
-    return render_template('fim.html', percGen=percGen, percEtn=percEtn, percEdu=percEdu, renda=float(session['income']), familia=float(session['family']),genero=int(session['gender']), race=int(session['ethnicity']), escolaridade=int(session['graduation']), estado=int(session['state']))
+    percPri = MediaFinal(float(session['income']), int(session['ethnicity']), int(session['gender']), int(session['state']), int(session['graduation']))
+    return render_template('fim.html', percPri=percPri, percGen=percGen, percEtn=percEtn, percEdu=percEdu, renda=float(session['income']), familia=float(session['family']),genero=int(session['gender']), race=int(session['ethnicity']), escolaridade=int(session['graduation']), estado=int(session['state']))
 #-------------------------------------fazer este comando caso queira fazer um 'if/else' no arquivo fim.html
 
 @app.route('/form', methods=['POST'])

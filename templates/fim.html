@@ -240,28 +240,8 @@
         </div>
         <div class="card-content">
 
-            {% if renda >= 13560.00 and genero == 1 and race == 1 and escolaridade == 7 %}
-            <span class="card-title activator grey-text text-darken-4">MENOS DE 1% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
-                    class="material-icons right">more_vert</i></span>
-            {% elif renda >= 13560.00 %}
-            <span class="card-title activator grey-text text-darken-4">2% DA POPULAÇÃO ESTÁ NESSA CONDIÇÃO<i
-                    class="material-icons right">more_vert</i></span>
-            {% elif renda >= 6780.00 %}
-            <span class="card-title activator grey-text text-darken-4">4% DA POPULAÇÃO ESTÁ NESSA CONDIÇÃO<i
-                    class="material-icons right">more_vert</i></span>
-            {% elif renda >= 3390.00 %}
-            <span class="card-title activator grey-text text-darken-4">9% DA POPULAÇÃO ESTÁ NESSA CONDIÇÃO<i
-                    class="material-icons right">more_vert</i></span>
-            {% elif renda >= 2034.00 %}
-            <span class="card-title activator grey-text text-darken-4">16% DA POPULAÇÃO ESTÁ NESSA CONDIÇÃO<i
-                    class="material-icons right">more_vert</i></span>
-            {% elif renda >= 1356.00 %}
-            <span class="card-title activator grey-text text-darken-4">20% DA POPULAÇÃO ESTÁ NESSA CONDIÇÃO<i
-                    class="material-icons right">more_vert</i></span>
-            {% elif renda >= 0.00  %}
-            <span class="card-title activator grey-text text-darken-4">46% DA POPULAÇÃO ESTÁ NESSA CONDIÇÃO<i
-                    class="material-icons right">more_vert</i></span>
-            {% endif %}
+            <span class="card-title activator grey-text text-darken-4">Você é {{percPri}}% privilegiado de acordo com os dados do PNAD<i
+                class="material-icons right">more_vert</i></span>
 
             <p><a href="#">Fonte: PNAD/IBGE</a></p>
             <!--tirar isso-->

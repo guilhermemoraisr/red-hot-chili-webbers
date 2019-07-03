@@ -49,31 +49,31 @@ def Etnia():
 
 
 def MediaFinal(salario, raca, sexo, estado, edu):
-    rendamax = income.max()
-    rendamin = income.min()
+    rendamax = dados3.income.max()
+    rendamin = dados3.income.min()
 
-    if sexo = 1 and raca = 1:
+    if sexo == 1 and raca == 1:
         privsexoraca=100
-    if sexo = 2 and raca = 1:
+    if sexo == 2 and raca == 1:
         privsexoraca = 66
-    if sexo = 1 and raca = 2:
+    if sexo == 1 and raca == 2:
         privsexoraca=33
-    if sexo = 2 and raca = 2:
+    if sexo ==2 and raca == 2:
         privsexoraca=0
     
-    if edu = 1:
+    if edu == 1:
         privedu = 14
-    if edu = 2:
+    if edu == 2:
         privedu = 28
-    if edu = 3:
+    if edu == 3:
         privedu = 42
-    if edu = 4:
+    if edu == 4:
         privedu = 56
-    if edu = 5:
+    if edu == 5:
         privedu = 78
-    if edu = 6:
+    if edu == 6:
         privedu = 84
-    if edu = 7:
+    if edu == 7:
         privedu = 100
     
 
@@ -105,8 +105,9 @@ def MediaFinal(salario, raca, sexo, estado, edu):
 
     privfinal = (privrenda+privedu+privestado+privsexoraca)/4
 
-    
+    return (privfinal.round(1))
 
+    
 
 
 
