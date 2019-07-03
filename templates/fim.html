@@ -25,7 +25,7 @@
             {% endif %}
 
             <p>Renda: R$ {{renda}} <br>
-                Renda familiar: R$ {{(renda/familia) | round(2)}} <br>
+                Renda familiar: R$ {{(renda/familia) |round(2)}} <br>
             </p>
 
             {% if escolaridade == 1 %}
@@ -68,7 +68,7 @@
             {% endif %}
 
             <p>Renda: R$ {{renda}} <br>
-                Renda familiar: R$ {{(renda/familia) | round(2)}} <br>
+                Renda familiar: R$ {{(renda/familia) |round(2)}} <br>
             </p>
 
             {% if escolaridade == 1 %}
@@ -111,7 +111,7 @@
             {% endif %}
 
             <p>Renda: R$ {{renda}} <br>
-                Renda familiar: R$ {{(renda/familia) | round(2)}} <br>
+                Renda familiar: R$ {{(renda/familia) |round(2)}} <br>
             </p>
 
             {% if escolaridade == 1 %}
@@ -154,7 +154,7 @@
             {% endif %}
 
             <p>Renda: R$ {{renda}} <br>
-                Renda familiar: R$ {{(renda/familia) | round(2)}} <br>
+                Renda familiar: R$ {{(renda/familia) |round(2)}} <br>
             </p>
 
             {% if escolaridade == 1 %}
@@ -244,22 +244,22 @@
             <span class="card-title activator grey-text text-darken-4">MENOS DE 1% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
                     class="material-icons right">more_vert</i></span>
             {% elif renda >= 13560.00 %}
-            <span class="card-title activator grey-text text-darken-4">2% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
+            <span class="card-title activator grey-text text-darken-4">2% DA POPULAÇÃO ESTÁ NESSA CONDIÇÃO<i
                     class="material-icons right">more_vert</i></span>
             {% elif renda >= 6780.00 %}
-            <span class="card-title activator grey-text text-darken-4">4% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
+            <span class="card-title activator grey-text text-darken-4">4% DA POPULAÇÃO ESTÁ NESSA CONDIÇÃO<i
                     class="material-icons right">more_vert</i></span>
             {% elif renda >= 3390.00 %}
-            <span class="card-title activator grey-text text-darken-4">9% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
+            <span class="card-title activator grey-text text-darken-4">9% DA POPULAÇÃO ESTÁ NESSA CONDIÇÃO<i
                     class="material-icons right">more_vert</i></span>
             {% elif renda >= 2034.00 %}
-            <span class="card-title activator grey-text text-darken-4">16% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
+            <span class="card-title activator grey-text text-darken-4">16% DA POPULAÇÃO ESTÁ NESSA CONDIÇÃO<i
                     class="material-icons right">more_vert</i></span>
             {% elif renda >= 1356.00 %}
-            <span class="card-title activator grey-text text-darken-4">20% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
+            <span class="card-title activator grey-text text-darken-4">20% DA POPULAÇÃO ESTÁ NESSA CONDIÇÃO<i
                     class="material-icons right">more_vert</i></span>
             {% elif renda >= 0.00  %}
-            <span class="card-title activator grey-text text-darken-4">46% DA POPULAÇÃO ESTÁ NESSA CONDIÇÂO<i
+            <span class="card-title activator grey-text text-darken-4">46% DA POPULAÇÃO ESTÁ NESSA CONDIÇÃO<i
                     class="material-icons right">more_vert</i></span>
             {% endif %}
 
@@ -280,10 +280,10 @@
 
                                 {% if genero == 1 %}
                                 <!--Homem-->
-                                <p>Em média sua renda é 23% a mais em relação a uma pessoa do gênero feminino.</p>
+                                <p>Em média sua renda é {{percGen}}% a mais em relação a uma pessoa do gênero feminino.</p>
                                 {% elif genero == 2 %}
                                 <!--Mulher-->
-                                <p>Em média você ganha 23% a menos em relação a uma pessoa do gênero masculino.</p>
+                                <p>Em média você ganha {{percGen}}% a menos em relação a uma pessoa do gênero masculino.</p>
                                 {% endif %}
 
                             </div>
@@ -296,10 +296,10 @@
 
                                 {% if race == 1 %}
                                 <!--Branco-->
-                                <p>Em média sua renda é 44% a mais em relação a uma pessoa de etnia negra.</p>
+                                <p>Em média sua renda é {{percEtn}}% a mais em relação a uma pessoa de etnia negra.</p>
                                 {% elif race == 2 %}
                                 <!--Negro-->
-                                <p>Em média você ganha 44% a menos em relação a uma pessoa de etnia branca.</p>
+                                <p>Em média você ganha {{percEtn}}% a menos em relação a uma pessoa de etnia branca.</p>
                                 {% endif %}
 
                             </div>
@@ -314,31 +314,31 @@
 
                                 {% if escolaridade == 1 %}
                                 <!--Sem estudo-->
-                                <p>Em média você ganha 83% a menos em relação a alguém com o ensino superior completo.
+                                <p>Em média você ganha {{percEdu}}% a menos em relação a alguém com o ensino superior completo.
                                 </p>
                                 {% elif escolaridade == 2 %}
                                 <!--Ensino fundamental incompleto-->
-                                <p>Em média você ganha 77% a menos em relação a alguém com o ensino superior completo.
+                                <p>Em média você ganha {{percEdu}}% a menos em relação a alguém com o ensino superior completo.
                                 </p>
                                 {% elif escolaridade == 3 %}
                                 <!--Ensino fundamental completo-->
-                                <p>Em média você ganha 70% a menos em relação a alguém com o ensino superior completo.
+                                <p>Em média você ganha {{percEdu}}% a menos em relação a alguém com o ensino superior completo.
                                 </p>
                                 {% elif escolaridade == 4 %}
                                 <!--Ensino médio incompleto-->
-                                <p>Em média você ganha 74% a menos em relação a alguém com o ensino superior completo.
+                                <p>Em média você ganha {{percEdu}}% a menos em relação a alguém com o ensino superior completo.
                                 </p>
                                 {% elif escolaridade == 5 %}
                                 <!--Ensino médio completo-->
-                                <p>Em média você ganha 66% a menos em relação a alguém com o ensino superior completo.
+                                <p>Em média você ganha {{percEdu}}% a menos em relação a alguém com o ensino superior completo.
                                 </p>
                                 {% elif escolaridade == 6 %}
                                 <!--Ensino superior incompleto-->
-                                <p>Em média você ganha 60% a menos em relação a alguém com o ensino superior completo.
+                                <p>Em média você ganha {{percEdu}}% a menos em relação a alguém com o ensino superior completo.
                                 </p>
                                 {% elif escolaridade == 7 %}
                                 <!--Ensino superior completo-->
-                                <p>Em média sua renda é 71% a mais em relação aos outros graus de escolaridade.</p>
+                                <p>Em média sua renda é {{percEdu}}% a mais em relação aos outros graus de escolaridade.</p>
                                 {% endif %}
 
                             </div>
