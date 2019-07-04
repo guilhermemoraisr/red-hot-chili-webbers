@@ -8,10 +8,10 @@
 - Lucas Rodrigues Fonseca / 180114077
 - Eric Chagas de Oliveira / 180119508
 
-# Qual o seu privilégio ?
+# Qual o seu privilégio?
 
 ## Algumas informações:
-Criamos um site que tem como foco a classificação do indivíduo na sociedade, classificações as quais depende de alguns fatores como a renda, gênero, sexo, estado, tamanho da família, etc.
+Criamos um site em Flask, que tem como foco a classificação do indivíduo na sociedade, classificações as quais depende de alguns fatores como a renda, gênero, sexo, estado, tamanho da família, etc.
 Para calcular a porcentagem de privilégio do usuário, utilizamos principalmente o dataframe do PNAD 2012 e outras informações externas, como classificação das classes sociais no Brasil, ranking das melhores regiões e definimos uma visão social pessimista porém muito realista em nosso meio, que seria a classificação do gênero e do sexo agrupados.
 Este site é um apêndice ao jogo desenvolvido pelos outros grupos do projeto final, com o objetivo de expor as dificuldades e privilégios da realidade social brasileira.
 Este trabalho foi orientado pelo docente Pr. Dr. Fábio Macêdo Mendes.
@@ -24,7 +24,7 @@ Este trabalho foi orientado pelo docente Pr. Dr. Fábio Macêdo Mendes.
 - Mulher branca = 66%
 - Homem branco = 100%
 
-### Analisamos a educação em 7 diferentes niveis de porcentagem
+### Analisamos a educação em 7 diferentes níveis de porcentagem
 
 - Sem estudo = 0%
 - Ensino fundamental incompleto = 16%
