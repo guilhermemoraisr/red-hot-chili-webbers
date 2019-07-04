@@ -92,21 +92,23 @@ def MediaFinal(salario, raca, sexo, estado, edu):
     #<!--Paraná, Rio Grande do Sul, Santa Catarina: Região Sul-->
 
     
-    rendamax = float(33900)
-    rendamin = dados3.income.min()
+    rendamax = dados3.income.max()
+    rendamin = dados3.income.mean()
 
     if salario > rendamax:
         salario = rendamax
     if salario < rendamin:
         salario = rendamin
     
-    diferenca = rendamax-rendamin
+    diferenca = (rendamax-rendamin)/dados3.weight.mean()
 
-    privrenda = (salario*100)/diferenca
+    privrenda = (salario)/diferenca
 
-    privfinal = ((3*privrenda)+privedu+privestado+privsexoraca)/6
+    privfinal = (privrenda+privedu+privestado+privsexoraca)/4
 
-    return (privfinal.round(1))
+    percfinal = (privfinal*100)/213.3
+
+    return (percfinal.round(1))
 
     
 
