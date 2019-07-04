@@ -1,5 +1,5 @@
 import pandas as pd
-url = 'https://raw.githubusercontent.com/fabiommendes/desenvolvimento-de-software/master/dados/pnad2012.csv'
+url = 'https://raw.githubusercontent.com/guilhermemoraisr/red-hot-chili-webbers/master/data/pnad2012.csv'
 dados = pd.read_csv(url, index_col=0, sep=',')
 
 dados2 = dados.fillna(dados.mean())
@@ -53,24 +53,24 @@ def MediaFinal(salario, raca, sexo, estado, edu):
     if sexo == 1 and raca == 1:
         privsexoraca=100
     if sexo == 2 and raca == 1:
-        privsexoraca = 66
+        privsexoraca = 75
     if sexo == 1 and raca == 2:
-        privsexoraca=33
+        privsexoraca=50
     if sexo ==2 and raca == 2:
-        privsexoraca=0
+        privsexoraca=25
     
     if edu == 1:
         privedu = 0
     if edu == 2:
-        privedu = 16
+        privedu = 12.5
     if edu == 3:
-        privedu = 33
+        privedu = 25
     if edu == 4:
-        privedu = 50
+        privedu = 37.5
     if edu == 5:
-        privedu = 66
+        privedu = 50
     if edu == 6:
-        privedu = 83
+        privedu = 75
     if edu == 7:
         privedu = 100
     
@@ -82,35 +82,30 @@ def MediaFinal(salario, raca, sexo, estado, edu):
         privestado = 0
     #<!--Alagoas, Bahia, Ceará, Maranhão, Paraíba, Pernambuco, Rio Grande do Norte, Sergipe: Região Nordeste-->
     elif estado == 7 or estado == 9 or estado == 11 or estado == 12 :
-        privestado = 75
+        privestado = 50
     #<!--Distrito Federal, Goiás, Mato Grosso, Mato Grosso do Sul: Região Centro-Oeste-->
     elif estado == 8 or estado == 13 or estado == 19 or estado == 25 :
         privestado = 100
     #<!--Espírito Santo, Minas Gerais, Rio de Janeiro, São Paulo: Região Sudeste-->
     elif estado == 16 or estado == 21 or estado == 24 :
-        privestado = 50
+        privestado = 75
     #<!--Paraná, Rio Grande do Sul, Santa Catarina: Região Sul-->
 
-    
-    rendamax = dados3.income.max()
-    rendamin = dados3.income.mean()
+    rendamax = dados2.income.max()
+    rendamin = dados3.income.min()
 
     if salario > rendamax:
         salario = rendamax
     if salario < rendamin:
         salario = rendamin
     
-    diferenca = (rendamax-rendamin)/dados3.weight.mean()
+    diferenca = (rendamax-rendamin)
 
-    privrenda = (salario)/diferenca
+    privrenda = (100*salario)/(diferenca)
 
     privfinal = (privrenda+privedu+privestado+privsexoraca)/4
 
-    percfinal = (privfinal*100)/213.3
-
-    return (percfinal.round(1))
-
-    
+    return (privfinal.round(1))
 
 
 """
