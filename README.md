@@ -14,7 +14,7 @@
 - Criamos um site em Flask, que tem como foco a classificação do indivíduo na sociedade, classificações as quais depende de alguns fatores como a renda, gênero, sexo, estado, tamanho da família, etc.
 - Para calcular a porcentagem de privilégio do usuário, utilizamos principalmente o dataframe do PNAD 2012 e outras informações externas, como classificação das classes sociais no Brasil, ranking das melhores regiões e definimos uma visão social pessimista porém muito realista em nosso meio, que seria a classificação do gênero e do sexo agrupados.
 - Este site é um apêndice ao jogo desenvolvido pelos outros grupos do projeto final, com o objetivo de expor as dificuldades e privilégios da realidade social brasileira.
-Este trabalho foi orientado pelo docente Prof. Dr. Fábio Macêdo Mendes.
+Este trabalho foi orientado pelo docente Prof. Fábio Macêdo Mendes.
 
 ## Método para cálculo do privilégio
 ### Analisamos a raça e o gênero em 4 diferentes níveis de porcentagem
