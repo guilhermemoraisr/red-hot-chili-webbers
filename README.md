@@ -52,19 +52,19 @@ Você deve ter o Python 3+* e o pipenv** instalado para rodar o site.
 
 2º - Vá até o caminho do repositório, no caso, pelo terminal, o meu está localizado no Desktop
 
-[Imgur](https://i.imgur.com/9caDnK6.png)
+<a href="https://imgur.com/9caDnK6"><img src="https://i.imgur.com/9caDnK6.png" title="source: imgur.com" /></a>
 
 3º - Digite 'pipenv shell', o nome do ambiente virtual foi definido como shell
 
-[Imgur](https://i.imgur.com/t8791qW.png)
+<a href="https://imgur.com/t8791qW"><img src="https://i.imgur.com/t8791qW.png" title="source: imgur.com" /></a>
 
 4º - Digite 'pipenv install -r ./requirements.tt', este comando vai instalar todas as bibliotecas necessárias
 
-[Imgur](https://i.imgur.com/r281BlS.png)
+<a href="https://imgur.com/r281BlS"><img src="https://i.imgur.com/r281BlS.png" title="source: imgur.com" /></a>
 
 5º - Digite 'flask run', isso vai criar um servidor local para o site
 
-[Imgur](https://i.imgur.com/EOMF1Ux.png)
+<a href="https://imgur.com/EOMF1Ux"><img src="https://i.imgur.com/EOMF1Ux.png" title="source: imgur.com" /></a>
 
 6º - Entre no link que apareceu, este é o endereço do site.
 
