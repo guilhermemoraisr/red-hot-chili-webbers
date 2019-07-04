@@ -42,7 +42,7 @@ Este trabalho foi orientado pelo docente Prof. Fábio Macêdo Mendes: https://gi
 - Sudeste = 100%
 
 ### Analisamos a renda a partir do dataframe do PNAD 2012
-- Calculamos a diferença salarial entre o mais rico e mais pobre e aplicamos a proporção à porcentagem do salário informado, em trabalho coordenado com o grupo Whiskritório, responsável pelo processamento de dados.
+- Calculamos a diferença salarial entre o mais rico e mais pobre e aplicamos a proporção à porcentagem do salário informado, também com base na pirâmide de renda de fonte Datafolha/nov.2013.
 
 # Como rodar o site em sua máquina ?
 
