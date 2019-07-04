@@ -2,28 +2,24 @@ import pandas as pd
 url = 'https://raw.githubusercontent.com/guilhermemoraisr/red-hot-chili-webbers/master/data/pnad2012.csv'
 dados = pd.read_csv(url, index_col=0, sep=',')
 
-dados2 = dados.fillna(dados.mean())
-
-dados3 = dados2.copy()
-
-dados3[['income', 'income_work', 'income_rent', 'income_capital']] = dados2[['income', 'income_work', 'income_rent', 'income_capital']]
+dados = dados.dropna(axis=0, subset=['income'])
 
 # Agrupando por raça
-brancos = dados3[(dados3.race == 16) | (dados3.race == 1)]
-negros = dados3[(dados3.race == 2) | (dados3.race == 4) | (dados3.race == 8)]
+brancos = dados[(dados.race == 16) | (dados.race == 1)]
+negros = dados[(dados.race == 2) | (dados.race == 4) | (dados.race == 8)]
 
 # Agrupando por gênero
-homem = dados3[(dados3.gender == 1)]
-mulher = dados3[(dados3.gender == 2)]
+homem = dados[(dados.gender == 1)]
+mulher = dados[(dados.gender == 2)]
 
 # Agrupando por educação
-sem_estudo = dados3[(dados3.education == 0) | (dados3.education == 1)]
-fund_incompleto = dados3[(dados3.education == 2) | (dados3.education == 3)]
-fund_completo = dados3[(dados3.education == 4) | (dados3.education == 5)]
-med_incompleto = dados3[(dados3.education == 6) | (dados3.education == 7)]
-med_completo = dados3[(dados3.education == 8) | (dados3.education == 9) | (dados3.education == 10)]
-sup_incompleto = dados3[(dados3.education == 11) | (dados3.education == 12) | (dados3.education == 13) | (dados3.education == 14)]
-sup_completo = dados3[(dados3.education == 15)]
+sem_estudo = dados[(dados.education == 0) | (dados.education == 1)]
+fund_incompleto = dados[(dados.education == 2) | (dados.education == 3)]
+fund_completo = dados[(dados.education == 4) | (dados.education == 5)]
+med_incompleto = dados[(dados.education == 6) | (dados.education == 7)]
+med_completo = dados[(dados.education == 8) | (dados.education == 9) | (dados.education == 10)]
+sup_incompleto = dados[(dados.education == 11) | (dados.education == 12) | (dados.education == 13) | (dados.education == 14)]
+sup_completo = dados[(dados.education == 15)]
 
 def Escolaridade(edu):
     if edu == 1:
@@ -50,8 +46,6 @@ def Etnia():
 
 def MediaFinal(salario, raca, sexo, estado, edu):
 
-    rendamax= float(33900)
-
     if sexo == 1 and raca == 1:
         privsexoraca=100
     if sexo == 2 and raca == 1:
@@ -76,38 +70,43 @@ def MediaFinal(salario, raca, sexo, estado, edu):
     if edu == 7:
         privedu = 100
     
-
-    if estado == 1 or estado == 3 or estado == 4 or estado == 14 or estado == 22 or estado == 23 or estado == 27 :
-        privestado = 25
-    #<!--Acre, Amapá, Amazonas, Pará, Rondônia, Roraima, Tocantins: Região Norte-->
-    elif estado == 2 or estado == 5 or estado == 6 or estado == 10 or estado == 15 or estado == 17 or estado == 18 or estado == 20 or estado == 26 :
-        privestado = 0
-    #<!--Alagoas, Bahia, Ceará, Maranhão, Paraíba, Pernambuco, Rio Grande do Norte, Sergipe: Região Nordeste-->
-    elif estado == 7 or estado == 9 or estado == 11 or estado == 12 :
-        privestado = 50
-    #<!--Distrito Federal, Goiás, Mato Grosso, Mato Grosso do Sul: Região Centro-Oeste-->
-    elif estado == 8 or estado == 13 or estado == 19 or estado == 25 :
+    # Porcentagem de privilégio em relação à renda média de cada unidade da federação. 
+    if estado == 7 or estado == 25:
         privestado = 100
-    #<!--Espírito Santo, Minas Gerais, Rio de Janeiro, São Paulo: Região Sudeste-->
-    elif estado == 16 or estado == 21 or estado == 24 :
-        privestado = 75
-    #<!--Paraná, Rio Grande do Sul, Santa Catarina: Região Sul-->
+    #<!--Distrito Federal e São Paulo-->
+    elif estado == 19 or estado == 24 or estado == 16 or estado == 21:
+        privestado = 80
+    #<!--Rio de Janeiro, Paraná, Santa Catarina e Rio Grande do Sul-->
+    elif estado == 11 or estado == 12 or estado == 9 or estado == 13 or estado == 8:
+        privestado = 60
+    #<!--Mato Grosso, Mato Grosso do Sul, Goiás, Minas Gerais e Espírito Santo-->
+    elif estado == 23 or estado == 17:
+        privestado = 40
+    #<!--Roraima e Pernambuco-->
+    elif estado == 1 or estado == 4 or estado == 22 or estado == 14 or estado == 3 or estado == 27 or estado == 18 or estado == 20 or estado == 2 or estado == 15 or estado == 26 or estado == 5 or estado == 6:
+        privestado = 20
+    #<!--Acre, Amazonas, Rondônia, Pará, Amapá, Tocantins, Ceará, Rio Grande do Norte, Alagoas, Paraíba, Sergipe e Bahia-->
+    elif estado == 10:
+        privestado = 0
+    #<!--Maranhão-->
 
-    rendamax = float(33900)
-    rendamin = dados3.income.min()
+    # Cálculo do privilégio em relação à renda do indivíduo
+    rendamax = dados.income.max()
+    rendamin = dados.income.min()
 
     if salario > rendamax:
         salario = rendamax
     if salario < rendamin:
         salario = rendamin
-    
-    diferenca = (rendamax-rendamin)
 
-    privrenda = (100*salario)/(diferenca)
+    for i, r in enumerate(dados.income):
+        if r>salario:
+            break
+    privrenda = ((i+1)/len(dados.income))*100
 
-    privfinal = ((3*privrenda)+privedu+privestado+privsexoraca)/6
+    privfinal = ((3*privrenda)+privestado+privedu+privsexoraca)/6.0
 
-    return (privfinal.round(1))
+    return (privfinal)
 
 
 """
