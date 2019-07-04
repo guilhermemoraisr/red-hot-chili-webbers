@@ -40,7 +40,7 @@ Para calcular a porcentagem de privilégio do usuário, utilizamos principalment
 - Sudeste = 100%
 
 ### Analisamos a renda a partir do dataframe do PNAD 2012
-- Calculamos a diferença salarial entre o mais rico e mais probre e aplicamos a proporção à procentagem do salária informado
+- Calculamos a diferença salarial entre o mais rico e mais probre e aplicamos a proporção à procentagem do salário informado
 
 
 
