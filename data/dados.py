@@ -62,17 +62,17 @@ def MediaFinal(salario, raca, sexo, estado, edu):
         privsexoraca=0
     
     if edu == 1:
-        privedu = 14
+        privedu = 0
     if edu == 2:
-        privedu = 28
+        privedu = 16
     if edu == 3:
-        privedu = 42
+        privedu = 33
     if edu == 4:
-        privedu = 56
+        privedu = 50
     if edu == 5:
-        privedu = 78
+        privedu = 66
     if edu == 6:
-        privedu = 84
+        privedu = 83
     if edu == 7:
         privedu = 100
     
