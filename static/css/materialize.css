@@ -2163,7 +2163,7 @@ html {
  */
 body {
   margin: 0;
-  background-color: #2F4550;
+  background-image: url(/static/images/background.jpg);
 }
 
 /**
