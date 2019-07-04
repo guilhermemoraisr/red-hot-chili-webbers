@@ -6,7 +6,7 @@ dados2 = dados.fillna(dados.mean())
 
 dados3 = dados2.copy()
 
-dados3[['income', 'income_work', 'income_rent', 'income_capital']] = dados2[['income', 'income_work', 'income_rent', 'income_capital']].multiply(1.4907)
+dados3[['income', 'income_work', 'income_rent', 'income_capital']] = dados2[['income', 'income_work', 'income_rent', 'income_capital']]
 
 # Agrupando por raça
 brancos = dados3[(dados3.race == 16) | (dados3.race == 1)]
@@ -50,6 +50,8 @@ def Etnia():
 
 def MediaFinal(salario, raca, sexo, estado, edu):
 
+    rendamax= float(33900)
+
     if sexo == 1 and raca == 1:
         privsexoraca=100
     if sexo == 2 and raca == 1:
@@ -91,7 +93,7 @@ def MediaFinal(salario, raca, sexo, estado, edu):
         privestado = 75
     #<!--Paraná, Rio Grande do Sul, Santa Catarina: Região Sul-->
 
-    rendamax = dados2.income.max()
+    rendamax = float(33900)
     rendamin = dados3.income.min()
 
     if salario > rendamax:
@@ -103,7 +105,7 @@ def MediaFinal(salario, raca, sexo, estado, edu):
 
     privrenda = (100*salario)/(diferenca)
 
-    privfinal = (privrenda+privedu+privestado+privsexoraca)/4
+    privfinal = ((3*privrenda)+privedu+privestado+privsexoraca)/6
 
     return (privfinal.round(1))
 
