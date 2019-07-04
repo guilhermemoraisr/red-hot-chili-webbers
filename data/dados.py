@@ -49,8 +49,6 @@ def Etnia():
 
 
 def MediaFinal(salario, raca, sexo, estado, edu):
-    rendamax = dados3.income.max()
-    rendamin = dados3.income.min()
 
     if sexo == 1 and raca == 1:
         privsexoraca=100
@@ -93,6 +91,9 @@ def MediaFinal(salario, raca, sexo, estado, edu):
         privestado = 50
     #<!--Paraná, Rio Grande do Sul, Santa Catarina: Região Sul-->
 
+    
+    rendamax = float(33900)
+    rendamin = dados3.income.min()
 
     if salario > rendamax:
         salario = rendamax
@@ -103,12 +104,11 @@ def MediaFinal(salario, raca, sexo, estado, edu):
 
     privrenda = (salario*100)/diferenca
 
-    privfinal = (privrenda+privedu+privestado+privsexoraca)/4
+    privfinal = ((3*privrenda)+privedu+privestado+privsexoraca)/6
 
     return (privfinal.round(1))
 
     
-
 
 
 """
@@ -224,4 +224,12 @@ negros.income.mean()
 
 #%%
 ((100 - ((100 * sem_estudo.income.mean()) / sup_completo.income.mean())) + (100 - ((100 * fund_incompleto.income.mean()) / sup_completo.income.mean())) + (100 - ((100 * fund_completo.income.mean()) / sup_completo.income.mean())) + (100 - ((100 * med_incompleto.income.mean()) / sup_completo.income.mean())) + (100 - ((100 * med_completo.income.mean()) / sup_completo.income.mean())) + (100 - ((100 * sup_incompleto.income.mean()) / sup_completo.income.mean()))) / 6
+
+#%%
+dados3.income.min()
+
+#%%
+negros.income.max()
+
+#%%
 """
