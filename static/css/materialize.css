@@ -3081,14 +3081,14 @@ td, th {
 
 .collection {
   margin: 0.5rem 0 1rem 0;
-  border: 1px solid #85969F;
+  border: 1px linear-gradient(to top left, #33ccff 0%, #ff99cc 100%);
   border-radius: 2px;
   overflow: hidden;
   position: relative;
 }
 
 .collection .collection-item {
-  background-color: #85969F;
+  background: linear-gradient(to top left, #33ccff 0%, #ff99cc 100%);
   line-height: 1.5rem;
   padding: 10px 20px;
   margin: 0;
@@ -4746,7 +4746,7 @@ small {
 .card {
   position: relative;
   margin: 0.5rem 0 1rem 0;
-  background-color: rgb(185, 198, 204);
+   background: linear-gradient(to top left, #33ccff 0%, #ff99cc 100%);
   -webkit-transition: -webkit-box-shadow .25s;
   transition: -webkit-box-shadow .25s;
   transition: box-shadow .25s;
@@ -4929,7 +4929,7 @@ small {
 .card .card-reveal {
   padding: 24px;
   position: absolute;
-  background-color: #657877;
+  background: linear-gradient(to top left, #33ccff 0%, #ff99cc 100%);
   width: 100%;
   overflow-y: auto;
   left: 0;
