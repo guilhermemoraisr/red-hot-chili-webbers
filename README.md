@@ -54,7 +54,7 @@ Você deve ter o Python 3+* e o pipenv** instalado para rodar o site.
 
 <a href="https://imgur.com/9caDnK6"><img src="https://i.imgur.com/9caDnK6.png" title="source: imgur.com" /></a>
 
-3º - Digite 'pipenv shell', este comando criará um ambiente ativo, por padrão o ambiente é nomeado com o nome da pasta onde o mesmo foi criado, no nosso caso o ambiente virtual se chama: 
+3º - Digite 'pipenv shell', este comando criará um ambiente ativo, por padrão o ambiente é nomeado com o nome da pasta onde o mesmo foi criado, no nosso caso o ambiente virtual se chama: red-hot-chili-webbers
 
 <a href="https://imgur.com/t8791qW"><img src="https://i.imgur.com/t8791qW.png" title="source: imgur.com" /></a>
 
