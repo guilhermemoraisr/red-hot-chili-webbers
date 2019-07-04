@@ -58,7 +58,7 @@ Você deve ter o Python 3+* e o pipenv** instalado para rodar o site.
 
 <a href="https://imgur.com/t8791qW"><img src="https://i.imgur.com/t8791qW.png" title="source: imgur.com" /></a>
 
-4º - Digite 'pipenv install -r ./requirements.tt', este comando vai instalar todas as bibliotecas necessárias
+4º - Digite 'pipenv install -r ./requirements.txt', este comando vai instalar todas as bibliotecas necessárias
 
 <a href="https://imgur.com/r281BlS"><img src="https://i.imgur.com/r281BlS.png" title="source: imgur.com" /></a>
 
