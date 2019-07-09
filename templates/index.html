@@ -10,12 +10,12 @@
                 <span class="card-title">Informações Básicas</span>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="income" required name="income" type="number" step="0.01" class="validate">
+                        <input id="income" required name="income" min="0" type="number" step="0.01" class="validate">
                         <label for="income">Qual a soma da renda mensal de toda a sua família?</label>
                         <p id="moneda">Reais</p>
                     </div>
                     <div class="input-field col s6">
-                        <input id="family" required name="family" type="number" class="validate">
+                        <input id="family" required name="family" min="1" type="number" class="validate">
                         <label for="family">Quantas pessoas dependem dessa renda?</label>
                     </div>
                 </div>
