@@ -240,7 +240,7 @@
         </div>
         <div class="card-content">
 
-            <span class="card-title activator grey-text text-darken-4">Você é {{"%.1f"|format(percPri)}}% privilegiado de acordo com os dados do PNAD<i
+            <span class="card-title activator grey-text text-darken-4">Você é mais privilegiado que {{"%.1f"|format(percPri)}}% da população brasileira, de acordo com os dados do PNAD<i
                 class="material-icons right">more_vert</i></span>
 
             <p><a href="#">Fonte: PNAD/IBGE</a></p>
@@ -329,28 +329,89 @@
                             <div class="card-content white-text">
                                 <span class="card-title">Estado</span>
 
-                                {% if estado == 1 or estado == 3 or estado == 4 or estado == 14 or estado == 22 or estado == 23 or estado == 27 %}
-                                <!--Acre, Amapá, Amazonas, Pará, Rondônia, Roraima, Tocantins: Região Norte-->
-                                <p>A renda média da Região Norte é R$1500.00 e está abaixo da renda média nacional.
+                                {% if estado == 1 %}
+                                <p>A renda média do Acre é R$ 628.00 e está abaixo da renda média nacional.
                                 </p>
-                                {% elif estado == 2 or estado == 5 or estado == 6 or estado == 10 or estado == 15 or estado == 17 or estado == 18 or estado == 20 or estado == 26 %}
-                                <!--Alagoas, Bahia, Ceará, Maranhão, Paraíba, Pernambuco, Rio Grande do Norte, Sergipe: Região Nordeste-->
-                                <p>A renda média da Região Nordeste é R$1400.00 e está abaixo da renda média nacional.
+                                {% elif estado == 2 %}
+                                <p>A renda média de Alagoas é R$ 449.00 e está abaixo da renda média nacional.
                                 </p>
-                                {% elif estado == 7 or estado == 9 or estado == 11 or estado == 12 %}
-                                <!--Distrito Federal, Goiás, Mato Grosso, Mato Grosso do Sul: Região Centro-Oeste-->
-                                <p>A renda média da Região Centro-Oeste é R$2400.00 e está acima da renda média
-                                    nacional.
+                                {% elif estado == 3 %}
+                                <p>A renda média do Amapá é R$ 644.00 e está abaixo da renda média nacional.
                                 </p>
-                                {% elif estado == 8 or estado == 13 or estado == 19 or estado == 25 %}
-                                <!--Espírito Santo, Minas Gerais, Rio de Janeiro, São Paulo: Região Sudeste-->
-                                <p>A renda média da Região Sudeste é R$2500.00 e está acima da renda média nacional.
+                                {% elif estado == 4 %}
+                                <p>A renda média do Amazonas é R$ 555.00 e está abaixo da renda média nacional.
                                 </p>
-                                {% elif estado == 16 or estado == 21 or estado == 24 %}
-                                <!--Paraná, Rio Grande do Sul, Santa Catarina: Região Sul-->
-                                <p>A renda média da Região Sul é R$2300.00 e está acima da renda média nacional.
+                                {% elif estado == 5 %}
+                                <p>A renda média da Bahia é R$ 554.00 e está abaixo da renda média nacional.
+                                </p>
+                                {% elif estado == 6 %}
+                                <p>A renda média do Ceará é R$ 528.00 e está abaixo da renda média nacional.
+                                </p>
+                                {% elif estado == 7 %}
+                                <p>A renda média do Distrito Federal é R$ 1664.00 e está acima da renda média nacional.
+                                </p>
+                                {% elif estado == 8 %}
+                                <p>A renda média do Espírito Santo é R$ 897.00 e está acima da renda média nacional.
+                                </p>
+                                {% elif estado == 9 %}
+                                <p>A renda média de Goiás é R$ 885.00 e está acima da renda média nacional.
+                                </p>
+                                {% elif estado == 10 %}
+                                <p>A renda média do Maranhão é R$ 441.00 e está abaixo da renda média nacional.
+                                </p>
+                                {% elif estado == 11 %}
+                                <p>A renda média do Mato Grosso é R$ 930.00 e está acima da renda média nacional.
+                                </p>
+                                {% elif estado == 12 %}
+                                <p>A renda média do Mato Grosso do Sul é R$ 984.00 e está acima da renda média nacional.
+                                </p>
+                                {% elif estado == 13 %}
+                                <p>A renda média da Minas Gerais é R$ 868.00 e está acima da renda média nacional.
+                                </p>
+                                {% elif estado == 14 %}
+                                <p>A renda média de Pará é R$ 518.00 e está abaixo da renda média nacional.
+                                </p>
+                                {% elif estado == 15 %}
+                                <p>A renda média do Paraíba é R$ 579.00 e está abaixo da renda média nacional.
+                                </p>
+                                {% elif estado == 16 %}
+                                <p>A renda média do Paraná é R$ 1008.00 e está acima da renda média nacional.
+                                </p>
+                                {% elif estado == 17 %}
+                                <p>A renda média do Pernambuco é R$ 551.00 e está abaixo da renda média nacional.
+                                </p>
+                                {% elif estado == 18 %}
+                                <p>A renda média do Piauí é R$ 561.00 e está abaixo da renda média nacional.
+                                </p>
+                                {% elif estado == 19 %}
+                                <p>A renda média do Rio de Janeiro é R$ 956.00 e está acima da renda média nacional.
+                                </p>
+                                {% elif estado == 20 %}
+                                <p>A renda média do Rio Grande do Norte é R$ 644.00 e está abaixo da renda média nacional.
+                                </p>
+                                {% elif estado == 21 %}
+                                <p>A renda média do Rio Grande do Sul é R$ 1024.00 e está acima da renda média nacional.
+                                </p>
+                                {% elif estado == 22 %}
+                                <p>A renda média do Rondônia é R$ 717.00 e está abaixo da renda média nacional.
+                                </p>
+                                {% elif estado == 23 %}
+                                <p>A renda média do Roraima é R$713.00 e está abaixo da renda média nacional.
+                                </p>
+                                {% elif estado == 24 %}
+                                <p>A renda média do Santa Catarina é R$ 1057.00 e está acima da renda média nacional.
+                                </p>
+                                {% elif estado == 25 %}
+                                <p>A renda média do São Paulo é R$ 1094.00 e está acima da renda média nacional.
+                                </p>
+                                {% elif estado == 26 %}
+                                <p>A renda média do Sergipe é R$ 612.00 e está abaixo da renda média nacional.
+                                </p>
+                                {% elif estado == 27 %}
+                                <p>A renda média do Tocantins é R$ 677.00 e está abaixo da renda média nacional.
                                 </p>
                                 {% endif %}
+
 
                             </div>
                         </div>
