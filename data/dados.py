@@ -91,19 +91,25 @@ def MediaFinal(salario, raca, sexo, estado, edu):
         privestado = 0
     #<!--Maranhão-->
 
-    # Cálculo do privilégio em relação à renda do indivíduo
-    rendamax = dados.income.max()
-    rendamin = dados.income.min()
+    #Cálculo do privilégio baseado na posição do PNAD
+    
+    dfna = dados.dropna(axis=0, subset=['income'])
+    df = dfna.sort_values('income')
 
-    if salario > rendamax:
-        salario = rendamax
-    if salario < rendamin:
-        salario = rendamin
+    lista = list(df.income)
 
-    for i, r in enumerate(dados.income):
+    l = []
+    for i in lista:
+        if i not in l:
+            l.append(i)
+
+    for i,r in enumerate(l):
         if r>salario:
             break
-    privrenda = ((i+1)/len(dados.income))*100
+    
+    porc = ((i+1)/len(l))*100
+
+    privrenda = round(porc,1)
 
     privfinal = ((3*privrenda)+privestado+privedu+privsexoraca)/6.0
 
