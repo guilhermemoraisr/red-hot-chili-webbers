@@ -3,6 +3,7 @@ url = 'https://raw.githubusercontent.com/guilhermemoraisr/red-hot-chili-webbers/
 dados = pd.read_csv(url, index_col=0, sep=',')
 
 dados = dados.dropna(axis=0, subset=['income'])
+dados = dados.sort_values('income')
 
 # Agrupando por raça
 brancos = dados[(dados.race == 16) | (dados.race == 1)]
